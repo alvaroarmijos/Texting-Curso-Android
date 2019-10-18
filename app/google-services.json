@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "406814535543",
+    "firebase_url": "https://texting-c6790.firebaseio.com",
+    "project_id": "texting-c6790",
+    "storage_bucket": "texting-c6790.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406814535543:android:70f3a49bd8580df155fb72",
+        "android_client_info": {
+          "package_name": "com.armijos.texting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406814535543-1ave43ntfch9avjrbipmof3fq37g1tqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.armijos.texting",
+            "certificate_hash": "9301d27d3976b82258a8a948fd6147a5ca23a010"
+          }
+        },
+        {
+          "client_id": "406814535543-8481lpd8sc68qr6ie7kq7djsn0f10fol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJwRWLJDFaxYnbmBXvt6bHhaNan_D-sT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406814535543-8481lpd8sc68qr6ie7kq7djsn0f10fol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
