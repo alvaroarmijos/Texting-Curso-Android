@@ -8,9 +8,9 @@ import com.google.firebase.database.Exclude;
 public class User {
     public static final String USERNAME = "username";
     public static final String PHOTO_URL = "photoUrl";
-    public static final String EMAIL = "mail";
+    public static final String EMAIL = "email";
     public static final String LAST_CONECTION_WITH = "lastConnectionWith";
-    public static final String MESSAGES_UNREAD = "messagesunread";
+    public static final String MESSAGES_UNREAD = "messagesUnread";
     public static final String UID = "uid";
 
 

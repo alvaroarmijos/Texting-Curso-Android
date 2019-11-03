@@ -52,10 +52,12 @@ public class FirebaseRealtimeDatabaseAPI {
         updateMyLastConnection(online,"", uid);
     }
 
-    private void updateMyLastConnection(boolean online, String uidFriend, String uid) {
+    public void updateMyLastConnection(boolean online, String uidFriend, String uid) {
         String lastConnectionWith = Constants.ONLINE_VALUE + SEPARATOR + uidFriend;
         Map<String, Object> values = new HashMap<>();
         values.put(User.LAST_CONECTION_WITH, online? lastConnectionWith : ServerValue.TIMESTAMP);
+        //offline
+        getUserReferenceByUid(uid).child(User.LAST_CONECTION_WITH).keepSynced(true);
         getUserReferenceByUid(uid).updateChildren(values);
 
         if (online){

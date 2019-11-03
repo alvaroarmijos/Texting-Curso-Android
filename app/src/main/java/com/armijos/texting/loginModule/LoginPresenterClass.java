@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.armijos.texting.R;
-import com.armijos.texting.common.model.LoginInteractorClass;
+import com.armijos.texting.loginModule.model.LoginInteractorClass;
 import com.armijos.texting.loginModule.events.LoginEvent;
 import com.armijos.texting.loginModule.model.LoginInteractor;
 import com.armijos.texting.loginModule.view.LoginActivity;

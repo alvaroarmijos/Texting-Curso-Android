@@ -2,6 +2,7 @@ package com.armijos.texting.mainModule.model;
 
 import com.armijos.texting.common.Constants;
 import com.armijos.texting.common.model.BasicEventsCallback;
+import com.armijos.texting.common.model.dataAccess.FirebaseCloudMessagingAPI;
 import com.armijos.texting.common.pojo.User;
 import com.armijos.texting.mainModule.events.MainEvent;
 import com.armijos.texting.mainModule.model.dataAccess.Authentication;
@@ -13,12 +14,16 @@ import org.greenrobot.eventbus.EventBus;
 public class MainInteractorClass implements MainInteractor {
     private RealtimeDatabase mDatabase;
     private Authentication mAuthentication;
+    //notify
+    private FirebaseCloudMessagingAPI mCloudMessagingAPI;
 
     private User mMyUser = null;
 
     public MainInteractorClass() {
         mDatabase = new RealtimeDatabase();
         mAuthentication = new Authentication();
+        //notify
+        mCloudMessagingAPI = FirebaseCloudMessagingAPI.getInstance();
     }
 
     @Override
@@ -48,7 +53,7 @@ public class MainInteractorClass implements MainInteractor {
         mDatabase.subscribeToRequests(getCurrentUser().getEmail(), new UserEventLinstener() {
             @Override
             public void onUserAdded(User user) {
-                post(MainEvent.REQUEST_ACCEPTED, user);
+                post(MainEvent.REQUEST_ADDED, user);
             }
 
             @Override
@@ -85,6 +90,8 @@ public class MainInteractorClass implements MainInteractor {
 
     @Override
     public void signOff() {
+        mCloudMessagingAPI.unsubscribeToMyTopics(getCurrentUser().getEmail());
+
         mAuthentication.signOff();
     }
 
